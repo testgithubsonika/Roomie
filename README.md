@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# Roomie 🏠
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to **Roomie** – your smart roommate and room-finding platform! This project combines a modern React Native (Expo) app with powerful Supabase Edge Functions to match seekers and listers for the perfect living situation.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Project Overview
+Roomie helps users:
+- **Seekers:** Find the best-matched rooms based on preferences and AI-powered similarity search.
+- **Listers:** List available rooms and connect with potential roommates.
+- **Chat:** Communicate securely and efficiently.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## ✨ Features
+- 🔒 **Authentication** (Supabase Auth)
+- 🏠 **Room Listings** (Lister dashboard)
+- 🤝 **Room Matching** (Seeker dashboard, AI-powered)
+- 💬 **Chat** (Seeker-Lister communication)
+- 📱 **Cross-platform** (iOS, Android, Web via Expo)
+- ⚡ **Supabase Edge Functions** for fast, serverless backend logic
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Setup Instructions
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+### 1. **Clone the Repository**
+```sh
+git clone https://github.com/yourusername/roomie.git
+cd Roomie
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. **Install Dependencies**
+```sh
+npm install
+```
 
-## Learn more
+### 3. **Environment Variables**
+Create a `.env` file in the project root:
+```
+SUPABASE_URL=your_supabase_url
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+GEMINI_API_KEY=your_gemini_api_key
+```
+*Get these from your [Supabase dashboard](https://app.supabase.com/).*
 
-To learn more about developing your project with Expo, look at the following resources:
+### 4. **Run the Expo App**
+```sh
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 5. **Run Supabase Edge Functions Locally**
+For example, to run the match-rooms function:
+```sh
+deno run --allow-read --allow-env --allow-net supabase/functions/match-rooms/index.ts
+```
+> **Note:** You need [Deno](https://deno.com/) installed.
 
-## Join the community
+### 6. **Deploy Edge Functions to Supabase**
+```sh
+supabase functions deploy match-rooms
+```
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🧪 Development Workflow
+- **Expo app:** Hot reloads with `npx expo start`.
+- **Edge Functions:** Edit and run with Deno locally, deploy with Supabase CLI.
+- **Environment:** Keep your `.env` in the project root for local dev.
+
+---
+
+## 🤝 Contributing
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Push and open a Pull Request
+
+All contributions are welcome! Please open issues for bugs or feature requests.
+
+---
+
+## 📄 License
+MIT
+
+---
+
+## 🙏 Acknowledgements
+- [Supabase](https://supabase.com/)
+- [Expo](https://expo.dev/)
+- [Deno](https://deno.com/)
+- [Google Gemini API](https://ai.google.dev/)
+
+---
+
+> Made with ❤️ by the Roomie team
